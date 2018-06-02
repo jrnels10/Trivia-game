@@ -1,0 +1,39 @@
+.enemy {
+    width: 100%;
+    height: 450px;
+}
+button {
+   height: 50px;
+   width: 100px;
+}
+#show-timer {
+   height: 60px;
+   margin: auto;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+h2 {
+   font-size: 60px;
+}
+.question {
+   height: 80%;
+   font-size: 30px;
+   font-weight: bold;
+   text-align: center;
+   margin: auto;
+}
+
+.answers {
+   font-size: 20px;
+}
+#cor {
+   margin:20px;
+   color: red;
+}
+#right {
+   margin: 20px;
+   color: green;
+}
+iframe {
+   margin:20px;
+}
