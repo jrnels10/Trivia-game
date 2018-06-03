@@ -8,50 +8,70 @@
     <link rel="reset" href="assets/css/reset.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/javascript/game.js"></script>
 
 </head>
 <style>
-
 </style>
 
 <body>
     <div class="container-fluid w-100" style="height: 750px">
         <div class="row h-100">
             <div class="col-12">
+                <h1>Select your player</h1>
                 <div class="row first" style="width: 100%; height: 450px">
 
                 </div>
+                <h2>Select your opponent</h2>
                 <div class="row neutral" style="width: 100%; height: 450px">
 
                 </div>
             </div>
-            <div class="col-3 m-0 playerChoice" >
+            <div class="col-3 m-0 playerChoice w3-animate-left">
 
             </div>
 
             <div class="col-6 m-0  h-100">
 
-                        <div class="row video" style="height: 80%; border: solid green 2px;">
-                            <div class="col-12">
-                                <div class="row start">
-                                    <button>Start</button>
-                                </div>
-                                <div class="row time">
-                                    <div id="show-timer"></div>
-                                </div>
-                                <div class="row quest">
-                                    <div class="question"></div>
-                                </div>
-                                <h1 id="correct"></h1>
-                                <h1 id="wrong"></h1>
-                                <h1 id="unanswered"></h1>
-                            </div>
+                <div class="row video" style="height: 80%">
+                    <div class="col-12">
+                        <div class="row instructions">
+                            <div class="truct" id="instr-1">Beat the enemy in a shootout by guessing three correct answers</div>
+                            <div class="truct" id="instr-2">Be careful though, because three wrong and the enemy wins</div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="truct" id="instr-3">Click start to begin the game...</div>
+
                         </div>
-            </div>
-                <div class="col-3 m-0 enemy">
+                        <div class="row start">
+                            <button>Start</button>
+                        </div>
+                        <div class="row time">
+                            <div id="show-timer"></div>
+                        </div>
+                        <div class="row quest">
+                            <div class="question"></div>
+                        </div>
+                        <div class="results">
+                            <div class='results' id="correct"></div>
+                            <div class='results' id="wrong"></div>
+                            <div class='results' id="unanswered"></div>
+                            <button type="button" class="newStuff btn btn-warning">Play again?</button>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div class="col-3 m-0 enemy w3-animate-right">
+            </div>
 
         </div>
     </div>
@@ -60,6 +80,8 @@
 
 
 </html>
+<script>
+</script>
 </body>
 
 </html>
