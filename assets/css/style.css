@@ -4,6 +4,9 @@
         background-size: 100%;
         background-repeat: no-repeat
     }
+    .row {
+        margin: auto;
+    }
 
     .enemy {
         width: 100%;
@@ -49,14 +52,17 @@
        color: red;
    }
    #right {
+       font-size: 30px;
+       text-align: center;
        margin: 20px;
        font-weight: bold;
        color: green;
    }
    iframe {
-       margin:20px;
+       width: 100%;
    }
    .start {
        width: 150px;
        margin: auto;
    }
+  

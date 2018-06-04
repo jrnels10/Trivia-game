@@ -3,6 +3,9 @@ $(document).ready(function () {
     var heightCss = 0;
     var playerCss = 0;
     $('.results').hide();
+    $('.playerChoice').hide();
+    $('.media').hide();
+    $('.enemy').hide();
     function chooseCharacter() {
         var main = $('body');
         // =====================================================================================================
@@ -54,9 +57,9 @@ $(document).ready(function () {
                 playerChar = $('<div>');
                 playerChar.addClass("col-3 h-100");
                 playerChar.html(`
-                        
+                        <div class="w3-container w3-center w3-animate-right h-100">
                         <div class="character card btn btn-primary m-2 p-0 w-100 h-100" id='${charPlayer[i].name}'>
-                            <img src='${charPlayer[i].image}' style=' height:100%'>
+                            <img src='${charPlayer[i].image}' style=' height:450px'>
                         </div>
 
                         `);
@@ -114,9 +117,9 @@ $(document).ready(function () {
                     var nuetralChar = $('<div>');
                     nuetralChar.addClass("col-3  h-100");
                     nuetralChar.html(`
-
-                <div class="opponent card btn btn-primary m-2 p-0 w-100 h-100" id='${secondChar[i].name}'>
-                            <img src='${secondChar[i].image}' style=' height:100%'>
+                            <div class="w3-container w3-center w3-animate-right h-100">
+                            <div class="opponent card btn btn-primary m-2 p-0 w-100 h-100" id='${secondChar[i].name}'>
+                            <img src='${secondChar[i].image}' style=' height:450px'>
                             </div>
 
                             `);
@@ -149,8 +152,8 @@ $(document).ready(function () {
                     playerChoice = $('<div>');
                     playerChoice.addClass("col-12");
                     playerChoice.html(`
-                            <div class="w3-container w3-center w3-animate-right">
-                            <img src='${firstPlayer.image}' style="width: 100%; height: 550px">
+                            <div class="w3-container w3-center w3-animate-right p-0">
+                            <img src='${firstPlayer.image}' style="width: 100%; height: 500px">
                             <h3 class="health card-img-overlay p-2" id='healthPlayer' style="background-color: maroon; top: 1%; height: 1px; opacity: .75"></h3>
                             </div>
 
@@ -161,8 +164,8 @@ $(document).ready(function () {
                     enemyChar.addClass("col-12");
                     enemyChar.html(`
 
-                    <div class="w3-container w3-center w3-animate-left">
-                <img src='${enemyPlayer.image}'  style="width: 100%; height: 550px">
+                    <div class="w3-container w3-center w3-animate-left p-0">
+                <img src='${enemyPlayer.image}'  style="width: 100%; height: 500px">
                 <h3 class="health card-img-overlay p-2" id='healthEnemy' style="background-color: maroon; top: 1%; height: 1px; opacity: .75"></h3>
 
                 </div>
@@ -178,6 +181,9 @@ $(document).ready(function () {
                     instructions();
 
                     $('.enemy').append(enemyChar)
+                    $('.playerChoice').show();
+                    $('.media').show();
+                    $('.enemy').show();
                     $('h1').hide();
                     $('h2').hide();
                 })
@@ -317,6 +323,7 @@ $(document).ready(function () {
         console.log(questionArray)
         if (correct === 3) {
             console.log("You win");
+            $(".newStuff").html(`<div>'YOU WIN'</div>`)
             stop();
             finish();
         }
@@ -395,7 +402,7 @@ $(document).ready(function () {
             <div id="cor">The correct answer is: ${currentCorrect}</div>
             <iframe src="https://giphy.com/embed/Njz0oop9x5Stq" width="480" height="203" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/movie-the-good-bad-and-ugly-eli-wallach-Njz0oop9x5Stq"></a></p>
                             `);
-        $('.question').append(gifWrong)
+        $('.quest').append(gifWrong)
         // mark number of correct up one
         //replace current question with a new question
         timer(5000);
@@ -409,11 +416,12 @@ $(document).ready(function () {
         console.log(correct);
         $('.questStuff').hide();
         var gifCorrect = $('<div>');
+        gifCorrect.addClass('cor w-100 m-auto')
         gifCorrect.html(`
         <div id='right'>Correct!</div>
         <iframe src="https://giphy.com/embed/8maWiWlmIcVWM" width="480" height="264" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/blondie-the-good-bad-and-ugly-tuco-8maWiWlmIcVWM"></a></p>
         `);
-        $('.question').append(gifCorrect)
+        $('.quest').append(gifCorrect)
         timer(5000);
 
     }
@@ -424,16 +432,16 @@ $(document).ready(function () {
             reset();
         }, value);
     }
-    function myFunction() {
-        var x = document.createElement("AUDIO");
+    // function myFunction() {
+    //     var x = document.createElement("AUDIO");
 
-        if (x.canPlayType("audio/mpeg")) {
-            x.setAttribute("src", "Ennio_Morricone_-_The_Good_the_Bad_and_the_Ugly.mp3");
-        } else {
-            console.log("no audio");
-        }
+    //     if (x.canPlayType("audio/mpeg")) {
+    //         x.setAttribute("src", "Ennio_Morricone_-_The_Good_the_Bad_and_the_Ugly.mp3");
+    //     } else {
+    //         console.log("no audio");
+    //     }
 
-        x.setAttribute("controls", "controls");
-        document.body.appendChild(x);
-    }
+    //     x.setAttribute("controls", "controls");
+    //     document.body.appendChild(x);
+    // }
 })
