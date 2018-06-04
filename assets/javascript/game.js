@@ -6,6 +6,7 @@ $(document).ready(function () {
     $('.playerChoice').hide();
     $('.media').hide();
     $('.enemy').hide();
+    $('.time').hide();    
     function chooseCharacter() {
         var main = $('body');
         // =====================================================================================================
@@ -262,6 +263,7 @@ $(document).ready(function () {
 
     function startGame() {
         $('button').on("click", function () {
+            $('.time').show();    
             $('.instructions').hide();
             $('.start').hide();
             newGame();
@@ -393,7 +395,7 @@ $(document).ready(function () {
     function wrongAction() {
         stop();
         wrong++;
-        playerCss = playerCss + 180;
+        playerCss = playerCss + 170;
         $('#healthPlayer').css('height', +playerCss);
         console.log(wrong);
         $('.answers').hide();
@@ -402,7 +404,7 @@ $(document).ready(function () {
             <div id="cor">The correct answer is: ${currentCorrect}</div>
             <iframe src="https://giphy.com/embed/Njz0oop9x5Stq" width="480" height="203" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/movie-the-good-bad-and-ugly-eli-wallach-Njz0oop9x5Stq"></a></p>
                             `);
-        $('.quest').append(gifWrong)
+        $('.question').append(gifWrong)
         // mark number of correct up one
         //replace current question with a new question
         timer(5000);
@@ -411,17 +413,16 @@ $(document).ready(function () {
     function correctAction() {
         stop();
         correct++;
-        heightCss = heightCss + 180;
+        heightCss = heightCss + 170;
         $('#healthEnemy').css('height', +heightCss);
         console.log(correct);
         $('.questStuff').hide();
         var gifCorrect = $('<div>');
-        gifCorrect.addClass('cor w-100 m-auto')
         gifCorrect.html(`
         <div id='right'>Correct!</div>
         <iframe src="https://giphy.com/embed/8maWiWlmIcVWM" width="480" height="264" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/blondie-the-good-bad-and-ugly-tuco-8maWiWlmIcVWM"></a></p>
         `);
-        $('.quest').append(gifCorrect)
+        $('.question').append(gifCorrect)
         timer(5000);
 
     }
