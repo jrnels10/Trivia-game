@@ -31,10 +31,11 @@
    .question, .truct {
        color: white;
        height: 80%;
-       font-size: 30px;
+       font-size: 25px;
        font-weight: bold;
        text-align: center;
        margin: auto;
+       width: 100%;
    }
    .results {
     color: white;
@@ -62,7 +63,7 @@
        width: 100%;
    }
    .start {
-       width: 150px;
+       width: 100px;
        margin: auto;
    }
   

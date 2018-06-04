@@ -33,14 +33,13 @@
 
             </div>
 
-            <div class="col-6 m-0 media mt-2 h-auto">
+            <div class="col-6 m-0 media mt-2 h-auto" >
 
                 <div class="row video mt-2" style="width: 100%; height: auto">
                     <div class="col-12 p-0">
-                        <div class="row instructions">
-                            <div class="truct" id="instr-1">Beat the enemy in a shootout by guessing three correct answers</div>
-                            <div class="truct" id="instr-2">Be careful though, because three wrong and the enemy wins</div>
-                            <br>
+                        <div class="row instructions mb-5s">
+                            <div class="truct" id="instr-1">Beat the enemy in a shootout by guessing three correct answers.</div>
+                            <div class="truct" id="instr-2">Be careful though, because three wrong and the enemy wins.</div>
                             <br>
                             <br>
                             <br>
@@ -48,20 +47,17 @@
                             <div class="truct" id="instr-3">Click start to begin the game...</div>
 
                         </div>
-                        <div class="row start">
-                            <button>Start</button>
+                        <div class="row start mt-4">
+                            <button id="startButton">Start</button>
                         </div>
                         <div class="row time">
                             <div id="show-timer"></div>
                         </div>
                         <div class="row quest">
                             <div class="question"></div>
-                        </div>
-                        <div class="results">
-                            <div class='results' id="correct"></div>
-                            <div class='results' id="wrong"></div>
-                            <div class='results' id="unanswered"></div>
-                            <button type="button" class="newStuff btn btn-warning">Play again?</button>
+                            <div class="results">
+                                <button type="button" class="newStuff btn btn-warning" id='winButton'>Play again?</button>
+                            </div>
                         </div>
                     </div>
                 </div>
