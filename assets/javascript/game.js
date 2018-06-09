@@ -433,6 +433,7 @@ $(document).ready(function () {
     function wrongAction() {
         stop();
         wrong++;
+        playerCss = 0;
         playerCss = playerCss + 170;
         $('#healthPlayer').css('height', +playerCss);
         console.log(wrong);
@@ -451,6 +452,7 @@ $(document).ready(function () {
     function correctAction() {
         stop();
         correct++;
+        heightCss = 0;
         heightCss = heightCss + 170;
         $('#healthEnemy').css('height', +heightCss);
         console.log(correct);
