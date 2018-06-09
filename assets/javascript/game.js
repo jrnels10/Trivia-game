@@ -309,8 +309,10 @@ $(document).ready(function () {
         correct = 0;
         wrong = 0;
         unanswered = 0;
-        $('#healthPlayer').css('height', + (playerCss * 0));
-        $('#healthEnemy').css('height', +(heightCss * 0));
+        playerCss = 0;
+        heightCss = 0;
+        $('#healthPlayer').css('height', (playerCss * 0));
+        $('#healthEnemy').css('height', (heightCss * 0));
         makeGameQuestion();
     }
 
@@ -433,7 +435,6 @@ $(document).ready(function () {
     function wrongAction() {
         stop();
         wrong++;
-        playerCss = 0;
         playerCss = playerCss + 170;
         $('#healthPlayer').css('height', +playerCss);
         console.log(wrong);
@@ -452,7 +453,6 @@ $(document).ready(function () {
     function correctAction() {
         stop();
         correct++;
-        heightCss = 0;
         heightCss = heightCss + 170;
         $('#healthEnemy').css('height', +heightCss);
         console.log(correct);
