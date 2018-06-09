@@ -256,7 +256,7 @@ $(document).ready(function () {
     var gameQuestions = [];
     var heightCss = 0;
     var playerCss = 0;
-
+    $('.res').hide();
     console.log(questionArray)
     function makeGameQuestion() {
         for (i = 0; i < questionArray.length; i++) {
@@ -266,14 +266,23 @@ $(document).ready(function () {
     }
 
     // START GAME by clicking the start button
-    $('#startButton').on("click", '#winButton', function () {
+    $('#startButton').on("click", function () {
         stop();
         $('.results').remove();
         newGame();
         console.log("OK wait!")
         displayInstructions();
         $('.question').show();
+        
     })
+    function replayButton() {
+        $("#winButton").on('click', function () {
+            console.log('hello')
+            displayInstructions();
+            $('.res').hide();
+            $('.question').show();
+        })
+    }
 
     function startGame() {
         $('#startButton').on("click", function () {
@@ -400,6 +409,8 @@ $(document).ready(function () {
     }
 
     function finish() {
+        $('.res').empty();
+        $('.res').show();
         $('.question').hide();
         var resultsDiv = $('<div>');
         resultsDiv.addClass('results');
@@ -415,8 +426,8 @@ $(document).ready(function () {
         gameButton.attr('id', 'winButton');
         gameButton.text('Play again')
         resultsDiv.prepend(gameButton);
-        $('.quest').prepend(resultsDiv);
-
+        $('.res').prepend(resultsDiv);
+        replayButton();
     }
 
     function wrongAction() {
